@@ -282,7 +282,6 @@ function lineSum(tr) {
 
 function columnSum(tr, event) {
     const tds = tr.children;
-    console.log(tds)
     let columnIndex = -1;
 
     for (let i = 0; i < tds.length-1; i++) {
@@ -304,7 +303,6 @@ function columnSum(tr, event) {
         }
     }
 
-    console.log(columnIndex, sum)
     return {column:columnIndex, sum: sum.toString()};
 }
 
