@@ -247,41 +247,64 @@
 // EXERCICE 11
 
 function numberRegex() {
-    let regex = /[0123456789]/
-    let e = document.activeElement
+    let regex =/^[0-9]+$/;
+    let e = document.activeElement;
     if(!regex.test(e.value) && e.value !== "") {
-        alert("La valeur que vous avez rentrez n'est pas correct.")
-        e.value = ""
+        //alert("La valeur que vous avez rentrez n'est pas correct.");
+        e.value = "";
     }
 }
 
-const listLine = document.querySelectorAll(".line");
 
-function allLineSum() {
-    for(let i = 0; i < listLine.length - 1; i++) {
-        console.log(listLine.item(i))
-        listLine.item(listLine.length - 1).innerHTML = "" + lineSum()
-        console.log(lineSum())
+const table = document.querySelector("table");
+
+table.addEventListener("input", function (event) {
+    const tr = event.target.parentElement.parentElement;
+    event.target.parentElement.parentElement.lastElementChild.innerHTML = lineSum(tr);
+    const columnResult = columnSum(tr, event);
+    const lastTr = table.lastElementChild.lastElementChild;
+    lastTr.children[columnResult.column].innerHTML = columnResult.sum;
+});
+
+function lineSum(tr) {
+    let sum = 0;
+
+    let inputs = tr.querySelectorAll("input");
+    for(let i of inputs) {
+        if (i.value === "") {
+            sum += 0;
+        } else {
+            sum += parseInt(i.value);
+        }
     }
-    // listLine.forEach(() => {
-    //     listLine.item(listLine.length  - 1).innerHTML = lineSum().toString()
-    // }, this)
+    return sum.toString();
 }
 
-function lineSum() {
-    let sum = 0
-    for(let i = 0; i < listLine.length - 1; i++) {
-        sum += parseInt(listLine.item(i).value)
+function columnSum(tr, event) {
+    const tds = tr.children;
+    let columnIndex = -1;
+
+    for (let i = 0; i < tds.length-1; i++) {
+        if (tds[i] === event.target.parentElement) {
+            columnIndex = i;
+        }
     }
-    return sum
-}
 
-function allColumnSum() {
+    let sum = 0;
 
-}
+    let trs = table.querySelectorAll("tr");
 
-function columnSum() {
+    for (let i = 0; i < trs.length-1; i++) {
+        let inputs = trs[i].querySelectorAll("input");
+        if (inputs[columnIndex].value === "") {
+            sum += 0;
+        } else {
+            sum += parseInt(inputs[columnIndex].value);
+        }
+    }
 
+    console.log(columnIndex, sum)
+    return {column:columnIndex, sum: sum.toString()};
 }
 
 // lineSum()
