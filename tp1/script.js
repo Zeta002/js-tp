@@ -246,4 +246,42 @@
 
 // EXERCICE 11
 
-// TODO: Faire l'exercice 11
+function numberRegex() {
+    let regex = /[0123456789]/
+    let e = document.activeElement
+    if(!regex.test(e.value) && e.value !== "") {
+        alert("La valeur que vous avez rentrez n'est pas correct.")
+        e.value = ""
+    }
+}
+
+const listLine = document.querySelectorAll(".line");
+
+function allLineSum() {
+    for(let i = 0; i < listLine.length - 1; i++) {
+        console.log(listLine.item(i))
+        listLine.item(listLine.length - 1).innerHTML = "" + lineSum()
+        console.log(lineSum())
+    }
+    // listLine.forEach(() => {
+    //     listLine.item(listLine.length  - 1).innerHTML = lineSum().toString()
+    // }, this)
+}
+
+function lineSum() {
+    let sum = 0
+    for(let i = 0; i < listLine.length - 1; i++) {
+        sum += parseInt(listLine.item(i).value)
+    }
+    return sum
+}
+
+function allColumnSum() {
+
+}
+
+function columnSum() {
+
+}
+
+// lineSum()
