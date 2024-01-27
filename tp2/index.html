@@ -9,10 +9,11 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../output.css">
-<!--    <script src="calculator.js" defer></script>-->
-<!--    <script src="celcius-fahrenheit.js" defer></script>-->
-<!--    <script src="slide-puzzle.js" defer></script>-->
-    <script src="rng-game.js" defer></script>
+    <!--    <script src="calculator.js" defer></script>-->
+    <!--    <script src="celcius-fahrenheit.js" defer></script>-->
+    <!--    <script src="slide-puzzle.js" defer></script>-->
+    <!--    <script src="rng-game.js" defer></script>-->
+    <script src="formulaire.js" defer></script>
 </head>
 <body class="bg-orange-200 flex flex-row h-screen items-center justify-center">
 
@@ -87,18 +88,98 @@
 <!--</div>-->
 
 <!--EXERCICE 4-->
-<div id="game" class="flex flex-col gap-5 bg-orange-100 p-20 rounded shadow">
-    <h1 id="title" class="scale-150 font-bold origin-left">Random number generator</h1>
-    <p id="order">Enter a number between 1 and 5000.</p>
-    <div id="inline">
-        <label for="number">
-            <input type="number" id="number" class="w-20 text-center rounded shadow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+<!--<div id="game" class="flex flex-col gap-5 bg-orange-100 p-20 rounded shadow">-->
+<!--    <h1 id="title" class="scale-150 font-bold origin-left">Random number generator</h1>-->
+<!--    <p id="order">Enter a number between 1 and 5000.</p>-->
+<!--    <div id="inline">-->
+<!--        <label for="number">-->
+<!--            <input type="number" id="number" class="w-20 text-center rounded shadow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">-->
+<!--        </label>-->
+<!--        <button id="test" class="bg-orange-200 px-2 rounded shadow active:bg-green-200">Test</button>-->
+<!--        <span id="too-low" class="invisible text-green-400">Too low</span>-->
+<!--        <span id="too-high" class="invisible text-red-400">Too high</span>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--EXERCICE 5-->
+<form action="" class="bg-orange-100 p-20 rounded shadow w-auto flex flex-col gap-10">
+    <h1 class="scale-125 origin-left font-bold">Étape 1 | Identité</h1>
+<!--    <div class="separator bg-gray-600 w-fit h-1"></div>-->
+    <div id="step1" class="flex flex-col gap-3 bg-orange-200 p-5 rounded shadow w-96">
+        <h2 class="scale-125 origin-left">Civilité</h2>
+        <div class="flex gap-10">
+            <label for="civilite1">
+                <input type="radio" id="civilite1" name="civilite" class="civilite">
+                Monsieur
+            </label>
+            <label for="civilite2">
+                <input type="radio" id="civilite2" name="civilite" class="civilite">
+                Madame
+            </label>
+        </div>
+
+        <label for="name" class="flex gap-5">
+            Nom
+            <input type="text" id="name" class="rounded shadow px-2">
         </label>
-        <button id="test" class="bg-orange-200 px-2 rounded shadow active:bg-green-200">Test</button>
-        <span id="too-low" class="invisible text-green-400">Too low</span>
-        <span id="too-high" class="invisible text-red-400">Too high</span>
+        <label for="firstname" class="flex gap-5">
+            Firstname
+            <input type="text" id="firstname" class="rounded shadow px-2">
+        </label>
+        <label for="email" class="flex gap-5">
+            Email
+            <input type="text" id="email" class="rounded shadow px-2">
+        </label>
+        <label for="name" class="flex gap-5">
+            Telephone
+            <input type="tel" id="tel" class="rounded shadow px-2">
+        </label>
     </div>
-</div>
+
+    <h1 class="scale-125 origin-left font-bold">Étape 2 | Adresse de livraison</h1>
+    <div id="step2" class="flex flex-col gap-3 bg-orange-200 p-5 rounded shadow w-96">
+        <label for="address" class="flex items-center gap-5">
+            Address
+            <textarea id="address" cols="25" rows="2" class="rounded shadow px-2"></textarea>
+        </label>
+        <label for="postal-code" class="flex items-center gap-5">
+            Postal code
+            <input type="text" id="postal-code" class="rounded shadow px-2">
+        </label>
+        <label for="city" class="flex items-center gap-5">
+            City
+            <input type="text" id="city" class="rounded shadow px-2">
+        </label>
+    </div>
+
+    <h1 class="scale-125 origin-left font-bold">Étape 3 | Informations CB</h1>
+    <div id="step3" class="flex flex-col gap-3 bg-orange-200 p-5 rounded shadow w-96">
+        <h2 class="scale-125 origin-left">Bank card type</h2>
+        <div class="flex gap-10">
+            <label for="cb-type1">
+                <input type="radio" id="cb-type1" name="cb-type" class="cb-type">
+                VISA
+            </label>
+            <label for="cb-type2">
+                <input type="radio" id="cb-type2" name="cb-type" class="cb-type">
+                AmEx
+            </label>
+            <label for="cb-type3">
+                <input type="radio" id="cb-type3" name="cb-type" class="cb-type">
+                Mastercard
+            </label>
+        </div>
+        <label for="card-number" class="flex items-center gap-5">
+            Card number
+            <input type="text" id="card-number" class="rounded shadow px-2">
+        </label>
+        <label for="security-code" class="flex items-center gap-5">
+            Security code
+            <input type="text" id="security-code" class="rounded shadow px-2">
+        </label>
+    </div>
+    <button id="submit-btn" type="submit" class="bg-orange-200 px-2 rounded shadow active:bg-green-200 w-20 scale-125 font-bold self-center">Submit</button>
+</form>
 
 </body>
 </html>
