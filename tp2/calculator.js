@@ -4,8 +4,6 @@ let nb2 = nbList[1] // Input nb2
 
 let result = document.getElementById('result') // Span result
 
-let operator = document.getElementById('operator') // Dropdown operator
-
 let execute = document.getElementById('execute') // Button execute
 
 function calc()  {
@@ -38,6 +36,8 @@ function calc()  {
 }
 // Version calc when click on button
 execute.addEventListener('click', calc)
+
+// let operator = document.getElementById('operator') // Dropdown operator
 
 // Version auto calc when change input or operator
 // operator.addEventListener('change', () => {
