@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background: navajowhite;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: row;
+    background: antiquewhite;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    gap: 10px;
+}
+
+#execute {
+    padding: 0 5px 0 5px;
+}
+
+.nbs {
+    width: 4em;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
