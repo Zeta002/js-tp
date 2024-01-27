@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../output.css">
     <script src="calculator.js" defer></script>
+    <script src="celcius-fahrenheit.js" defer></script>
 </head>
 <body class="bg-orange-200 flex flex-row h-screen items-center justify-center">
 
@@ -38,7 +39,20 @@
 <!--</div>-->
 
 <!--EXERCICE 2-->
+<div id="celcius-fahrenheit" class="flex flex-row gap-3">
+    <label for="celcius">
+        <input type="number" id="celcius" placeholder="°C" class="w-20 text-center rounded shadow [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        °C
+    </label>
 
+    <button id="celcius-convert" class="bg-orange-100 px-2 rounded shadow active:bg-green-200">=></button>
+    <button id="fahrenheit-convert" class="bg-orange-100 px-2 rounded shadow active:bg-red-200"><=</button>
+
+    <label for="fahrenheit">
+        <input type="number" id="fahrenheit" placeholder="°F" class="w-20 text-center rounded shadow  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        °F
+    </label>
+</div>
 
 </body>
 </html>

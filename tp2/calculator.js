@@ -4,8 +4,6 @@ let nb2 = nbList[1] // Input nb2
 
 let result = document.getElementById('result') // Span result
 
-let execute = document.getElementById('execute') // Button execute
-
 function calc()  {
 
     // Check if input is empty
@@ -34,8 +32,13 @@ function calc()  {
             result.innerHTML = "0"
     }
 }
+
+let execute = document.getElementById('execute') // Button execute
+
 // Version calc when click on button
-execute.addEventListener('click', calc)
+if(execute !== null) {
+    execute.addEventListener('click', calc)
+}
 
 // let operator = document.getElementById('operator') // Dropdown operator
 
