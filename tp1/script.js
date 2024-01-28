@@ -250,7 +250,6 @@ function numberRegex() {
     let regex =/^[0-9]+$/;
     let e = document.activeElement;
     if(!regex.test(e.value) && e.value !== "") {
-        //alert("La valeur que vous avez rentrez n'est pas correct.");
         e.value = "";
     }
 }
@@ -284,7 +283,7 @@ function columnSum(tr, event) {
     const tds = tr.children;
     let columnIndex = -1;
 
-    for (let i = 0; i < tds.length-1; i++) {
+    for (let i = 0; i < tds.length - 1; i++) {
         if (tds[i] === event.target.parentElement) {
             columnIndex = i;
         }
@@ -294,7 +293,7 @@ function columnSum(tr, event) {
 
     let trs = table.querySelectorAll("tr");
 
-    for (let i = 0; i < trs.length-1; i++) {
+    for (let i = 0; i < trs.length - 1; i++) {
         let inputs = trs[i].querySelectorAll("input");
         if (inputs[columnIndex].value === "") {
             sum += 0;
@@ -303,7 +302,5 @@ function columnSum(tr, event) {
         }
     }
 
-    return {column:columnIndex, sum: sum.toString()};
+    return {column: columnIndex, sum: sum.toString()};
 }
-
-// lineSum()

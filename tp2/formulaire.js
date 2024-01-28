@@ -1,6 +1,6 @@
 let civilite = document.querySelectorAll(".civilite")
-let nom = document.getElementById("name")
-let prenom = document.getElementById("firstname")
+let name = document.getElementById("name")
+let firstname = document.getElementById("firstname")
 let email = document.getElementById("email")
 let tel = document.getElementById("tel")
 let address = document.getElementById("address")
@@ -53,38 +53,45 @@ submitBtn.addEventListener("click", (e) => {
     let finalCardType = verifCardType()
     if(finalCardType === undefined) return
 
+    let regexNameFirstName = /^[a-zA-Z][a-zA-ZÀ-ÿ-]*[a-zA-ZÀ-ÿ]$/
+    let regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/
+    let regexTel = /^0[1-9]([-. ]?[0-9]{2}){4}$/
+    let regexPostalCode = /^[0-9]{5}$/
+    let regexCardNumber = /^[0-9]{16}$/
+    let regexSecurityCode = /^[0-9]{3}$/
+
     if(verifCivilite() === undefined) {
         alert("Veuillez choisir une civilité")
         return
     } else if(verifCardType() === undefined) {
         alert("Veuillez choisir un type de carte")
         return
-    } else if(nom.value === "") {
-        alert("Veuillez renseigner votre nom")
+    } else if(!regexNameFirstName.test(name.value)) {
+        alert("Veuillez renseigner un nom valide, il doit commencer par une majuscule ou minuscule, faire plus de 1 caractère, peut contenir un tiret mais pas d'espace et ne peut pas contenir de caractère spéciaux.")
         return
-    } else if(prenom.value === "") {
-        alert("Veuillez renseigner votre prénom")
+    } else if(!regexNameFirstName.test(firstname.value)) {
+        alert("Veuillez renseigner un prénom valide, il doit commencer par une majuscule ou minuscule, faire plus de 1 caractère, peut contenir un tiret mais pas d'espace et ne peut pas contenir de caractère spéciaux.")
         return
-    } else if(email.value === "") {
-        alert("Veuillez renseigner votre email")
+    } else if(!regexEmail.test(email.value)) {
+        alert("Veuillez renseigner un email valide")
         return
-    } else if(tel.value === "") {
-        alert("Veuillez renseigner votre numéro de téléphone")
+    } else if(!regexTel.test(tel.value)) {
+        alert("Veuillez renseigner un numéro de téléphone valide")
         return
     } else if(address.value === "") {
-        alert("Veuillez renseigner votre adresse")
+        alert("Veuillez renseigner une addresse valide")
         return
-    } else if(postalCode.value === "") {
-        alert("Veuillez renseigner votre code postal")
+    } else if(!regexPostalCode.test(postalCode.value)) {
+        alert("Veuillez renseigner un code postal valide")
         return
     } else if(city.value === "") {
-        alert("Veuillez renseigner votre ville")
+        alert("Veuillez renseigner une ville valide")
         return
-    } else if(cardNumber.value === "") {
-        alert("Veuillez renseigner votre numéro de carte")
+    } else if(!regexCardNumber.test(cardNumber.value.trim())) {
+        alert("Veuillez renseigner un numéro de carte valide")
         return
-    } else if(securityCode.value === "") {
-        alert("Veuillez renseigner votre code de sécurité")
+    } else if(!regexSecurityCode.test(securityCode.value)) {
+        alert("Veuillez renseigner une code de sécurité valide")
         return
     }
     form.submit()
