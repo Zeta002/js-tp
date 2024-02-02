@@ -11,9 +11,18 @@
 
 <label for="data" class="p-2 bg-orange-200 rounded shadow">Data's of the array</label>
 <p id="message"></p>
-<section id="data-container">
-    <p id="data" class="bg-orange-200 rounded shadow p-2"></p>
+<section id="data-container" class="flex flex-row gap-2">
+    <span id="temp-state" class="self-center"></span>
+    <p id="data" class="bg-orange-200 rounded shadow p-2 hidden" aria-live="assertive">
+        <abbr id="abbr-celsius" title="Degré Celsius">
+            °C
+        </abbr>
+    </p>
 </section>
+<div>
+    <span id="hist" class="hidden" aria-live="assertive">
+    </span>
+</div>
 
 </body>
 </html>
