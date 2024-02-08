@@ -7,22 +7,32 @@
     <link rel="stylesheet" href="../output.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="flex flex-col bg-gray-600 justify-center items-center h-screen gap-2">
+<body class="flex flex-col bg-gray-600
+justify-center items-center h-screen p-2">
 
-<label for="data" class="p-2 bg-orange-200 rounded shadow">Data's of the array</label>
-<p id="message"></p>
-<section id="data-container" class="flex flex-row gap-2">
-    <span id="temp-state" class="self-center"></span>
-    <p id="data" class="bg-orange-200 rounded shadow p-2 hidden" aria-live="assertive">
-        <abbr id="abbr-celsius" title="Degré Celsius">
-            °C
-        </abbr>
-    </p>
-</section>
-<div>
-    <span id="hist" class="hidden" aria-live="assertive">
-    </span>
-</div>
+<nav id="tabs" class="flex flex-row gap-10">
+    <button id="tab-data-btn" class="p-2 bg-orange-200 rounded shadow">Données</button>
+    <button id="tab-hist-btn" class="p-2 bg-orange-200 rounded shadow">Historique</button>
+</nav>
+
+<!--<button id="swap" class="p-2 bg-orange-200 rounded shadow">Passer d'un affichage à l'autre</button>-->
+
+<!--<label for="data" class="p-2 bg-orange-200 rounded shadow">Data's of the array</label>-->
+
+<main id="main-container" class="flex flex-col bg-gray-600 justify-center items-center h-screen gap-2">
+    <section id="data-container" class="flex flex-row gap-2">
+        <p id="message"></p>
+        <span id="temp-state" class="self-center"></span>
+        <p id="data" class="bg-orange-200 rounded shadow p-2 hidden" aria-live="assertive" role="alert">
+            <abbr id="abbr-celsius" title="Degré Celsius">
+                °C
+            </abbr>
+        </p>
+    </section>
+    <section id="hist-container" class="hidden">
+        <span id="hist" class="hidden" aria-live="assertive"></span>
+    </section>
+</main>
 
 </body>
 </html>

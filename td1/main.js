@@ -72,6 +72,22 @@ function displayHistory(hist) {
     }
 }
 
-await displayRNGTab();
+// TD2
+// 2
+// let swapButtonElement = document.getElementById("swap");
+//
+// swapButtonElement.addEventListener("click", () => {
+//     let dataSectionElement = document.getElementById("data-container");
+//     dataSectionElement.style.display = "flex";
+//     console.log(dataSectionElement.style.display);
+//     let histSectionElement = document.getElementById("hist-container");
+//     console.log(histSectionElement.style.display);
+//     if(histSectionElement.classList.contains("hidden")) {
+//         histSectionElement.classList.remove("hidden");
+//     } else histSectionElement.classList.add("hidden");
+//     if(histSectionElement.style.display === "block") histSectionElement.classList.add("hidden");
+//     // else if(histSectionElement.style.display === "block") histSectionElement.style.display = "none";
+//     // else if(dataSectionElement.style.display === "none") dataSectionElement.style.display = "flex";
+// });
 
-// 7
+await displayRNGTab();
